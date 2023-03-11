@@ -1,0 +1,188 @@
+Q1: What is Estimation Statistics? Explain point estimate and interval estimate.
+ans.  What is Estimation Statistics? Explain point estimate and interval estimate.
+
+Estimation statistics is a branch of statistics that involves estimating population parameters, such as the mean or proportion, from sample statistics. There are two types of estimation: point estimation and interval estimation.
+
+Point estimation involves using a single value, such as the sample mean, to estimate the population parameter. It is a simple and easy-to-understand method of estimation, but it may not give an accurate estimate of the population parameter.
+
+Interval estimation, on the other hand, involves using a range of values, such as a confidence interval, to estimate the population parameter. It provides a more accurate estimate of the population parameter and gives an idea of the precision of the estimate.
+
+
+Q2. Write a Python function to estimate the population mean using a sample mean and standard
+deviation.
+ANS. import math
+
+def estimate_pop_mean(sample_mean, sample_std_dev, sample_size):
+    std_error = sample_std_dev / math.sqrt(sample_size)
+    z_score = 1.96 # Assuming 95% confidence level
+    lower_limit = sample_mean - z_score * std_error
+    upper_limit = sample_mean + z_score * std_error
+    return (lower_limit, upper_limit)
+
+
+
+Q3: What is Hypothesis testing? Why is it used? State the importance of Hypothesis testing.
+ANS.  What is Hypothesis testing? Why is it used? State the importance of Hypothesis testing.
+
+Hypothesis testing is a statistical method that involves testing a hypothesis about a population parameter using sample data. It is used to determine whether a hypothesis about a population parameter is supported by the sample data.
+
+Hypothesis testing is essential in scientific research and decision-making because it provides a structured way to evaluate the validity of claims and make decisions based on the evidence. It helps to ensure that decisions are not based on chance or bias but on objective evidence.
+
+
+
+
+Q4. Create a hypothesis that states whether the average weight of male college students is greater than
+the average weight of female college students.
+ANS.  Create a hypothesis that states whether the average weight of male college students is greater than the average weight of female college students.
+
+The null hypothesis is that the average weight of male college students is equal to the average weight of female college students, while the alternative hypothesis is that the average weight of male college students is greater than the average weight of female college students.
+
+Null hypothesis: μmale = μfemale
+Alternative hypothesis: μmale > μfemale
+
+
+
+Q5. Write a Python script to conduct a hypothesis test on the difference between two population means,
+given a sample from each population.
+
+ANS. import numpy as np
+from scipy.stats import ttest_ind
+
+# Generate two random samples
+sample1 = np.random.normal(10, 2, 100)
+sample2 = np.random.normal(12, 2, 100)
+
+# Perform two-sample t-test
+t_statistic, p_value = ttest_ind(sample1, sample2)
+
+# Print the results
+print("t-statistic:", t_statistic)
+print("p-value:", p_value)
+
+
+
+
+
+Q6: What is a null and alternative hypothesis? Give some examples.
+ANS. A null hypothesis is a statement that assumes there is no significant difference or relationship between two or more variables in a population. An alternative hypothesis is a statement that assumes there is a significant difference or relationship between two or more variables in a population.
+
+Examples of null and alternative hypotheses are:
+
+Null hypothesis: There is no significant difference in the mean weight of apples between two orchards.
+Alternative hypothesis: The mean weight of apples from one orchard is greater than the mean weight of apples from the other orchard.
+
+Null hypothesis: There is no significant difference in the proportion of male and female students who prefer coffee.
+Alternative hypothesis: The proportion of male students who prefer coffee is different from the proportion of female students who prefer coffee.
+
+
+
+Q7: Write down the steps involved in hypothesis testing.
+ANS. The steps involved in hypothesis testing are:
+
+State the null and alternative hypotheses.
+Determine the appropriate statistical test and the level of significance.
+Collect and analyze the sample data.
+Calculate the test statistic and the p-value.
+Make a decision based on the p-value and the level of significance.
+Draw conclusions and interpret the results in the context of the problem.
+
+
+
+
+Q8. Define p-value and explain its significance in hypothesis testing.
+ANS. The p-value is the probability of obtaining a test statistic as extreme or more extreme than the observed one if the null hypothesis is true. In other words, it measures the strength of evidence against the null hypothesis.
+
+A small p-value indicates that the observed results are unlikely to occur by chance alone, and we reject the null hypothesis in favor of the alternative hypothesis. On the other hand, a large p-value indicates that the observed results are likely to occur by chance alone, and we fail to reject the null hypothesis.
+
+
+
+
+Q9. Generate a Student's t-distribution plot using Python's matplotlib library, with the degrees of freedom
+parameter set to 10.
+
+ANS. import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import t
+
+# Set the degrees of freedom
+df = 10
+
+# Generate the t-distribution values
+x = np.linspace(-4, 4, 100)
+y = t.pdf(x, df)
+
+# Plot the t-distribution
+plt.plot(x, y)
+plt.title("Student's t-distribution (df=10)")
+plt.xlabel("t-value")
+plt.ylabel("Probability density")
+plt.show()
+
+
+
+
+
+Q10. Write a Python program to calculate the two-sample t-test for independent samples, given two
+random samples of equal size and a null hypothesis that the population means are equal.
+ANS. 
+import numpy as np
+from scipy.stats import ttest_ind
+
+# Generate two random samples
+sample1 = np.random.normal(10, 2, 100)
+sample2 = np.random.normal(12, 2, 100)
+
+# Perform two-sample t-test
+t_statistic, p_value = ttest_ind(sample1, sample2)
+
+# Print the results
+print("t-statistic:", t_statistic)
+print("p-value:", p_value)
+
+
+
+
+Q11: What is Student’s t distribution? When to use the t-Distribution.
+
+
+
+
+
+Q12: What is t-statistic? State the formula for t-statistic.
+
+
+
+
+Q13. A coffee shop owner wants to estimate the average daily revenue for their shop. They take a random
+sample of 50 days and find the sample mean revenue to be $500 with a standard deviation of $50.
+Estimate the population mean revenue with a 95% confidence interval.
+
+
+
+
+Q14. A researcher hypothesizes that a new drug will decrease blood pressure by 10 mmHg. They conduct a
+clinical trial with 100 patients and find that the sample mean decrease in blood pressure is 8 mmHg with a
+standard deviation of 3 mmHg. Test the hypothesis with a significance level of 0.05.
+
+
+
+
+Q15. An electronics company produces a certain type of product with a mean weight of 5 pounds and a
+standard deviation of 0.5 pounds. A random sample of 25 products is taken, and the sample mean weight
+is found to be 4.8 pounds. Test the hypothesis that the true mean weight of the products is less than 5
+pounds with a significance level of 0.01.
+
+
+
+Q16. Two groups of students are given different study materials to prepare for a test. The first group (n1 =
+30) has a mean score of 80 with a standard deviation of 10, and the second group (n2 = 40) has a mean
+score of 75 with a standard deviation of 8. Test the hypothesis that the population means for the two
+groups are equal with a significance level of 0.01.
+
+
+
+Q17. A marketing company wants to estimate the average number of ads watched by viewers during a TV
+program. They take a random sample of 50 viewers and find that the sample mean is 4 with a standard
+deviation of 1.5. Estimate the population mean with a 99% confidence interval.
+
+
