@@ -143,20 +143,46 @@ print("p-value:", p_value)
 
 
 Q11: What is Student’s t distribution? When to use the t-Distribution.
+ans.  The Student's t-distribution is a probability distribution that arises in statistical inference when the population standard deviation is unknown and the sample size is small. It is used to estimate the mean of a normally distributed population when the sample size is small, typically less than 30. The t-distribution is similar to the standard normal distribution, but it has thicker tails, which makes it more appropriate for smaller sample sizes.
 
+The t-distribution is used in hypothesis testing to determine whether a sample mean is significantly different from a population mean, or to construct confidence intervals for the population mean
 
 
 
 
 Q12: What is t-statistic? State the formula for t-statistic.
 
+ANS. The t-statistic is a measure of the difference between a sample mean and a population mean, expressed in terms of the standard error of the sample mean. The formula for the t-statistic is:
 
+t = (x̄ - μ) / (s / √n)
+
+Where:
+x̄ is the sample mean
+μ is the population mean (or hypothesized value of the population mean)
+s is the sample standard deviation
+n is the sample size
 
 
 Q13. A coffee shop owner wants to estimate the average daily revenue for their shop. They take a random
 sample of 50 days and find the sample mean revenue to be $500 with a standard deviation of $50.
 Estimate the population mean revenue with a 95% confidence interval.
 
+ANS. To estimate the population mean revenue with a 95% confidence interval, we can use the following formula:
+
+Confidence interval = x̄ ± (tα/2 * s/√n)
+
+Where:
+x̄ is the sample mean revenue ($500)
+s is the sample standard deviation ($50)
+n is the sample size (50)
+tα/2 is the t-value for a 95% confidence interval with 49 degrees of freedom (from a t-table or calculator), which is approximately 2.009
+
+Plugging in the values, we get:
+
+Confidence interval = 500 ± (2.009 * 50/√50)
+Confidence interval = 500 ± 14.14
+
+Therefore, we can say with 95% confidence that the population mean revenue is between $485.86 and $514.14.
 
 
 
@@ -164,6 +190,25 @@ Q14. A researcher hypothesizes that a new drug will decrease blood pressure by 1
 clinical trial with 100 patients and find that the sample mean decrease in blood pressure is 8 mmHg with a
 standard deviation of 3 mmHg. Test the hypothesis with a significance level of 0.05.
 
+ANS.  To test the hypothesis that the new drug decreases blood pressure by 10 mmHg with a significance level of 0.05, we can use a one-sample t-test. The null hypothesis is that the mean decrease in blood pressure is equal to 10 mmHg, while the alternative hypothesis is that the mean decrease in blood pressure is less than 10 mmHg.
+
+The formula for the t-statistic in a one-sample t-test is:
+
+t = (x̄ - μ) / (s / √n)
+
+Where:
+x̄ is the sample mean decrease in blood pressure (8 mmHg)
+μ is the hypothesized value of the population mean decrease in blood pressure (10 mmHg)
+s is the sample standard deviation (3 mmHg)
+n is the sample size (100)
+
+Plugging in the values, we get:
+
+t = (8 - 10) / (3 / √100)
+t = -2 / 0.3
+t = -6.67
+
+The t-value for a one-tailed test with 99 degrees of freedom and a significance level of 0.05 is approximately -1.66 (from a t-table or calculator). Since our calculated t-value (-6.67) is less than the critical value (-1.66), we reject the null hypothesis and conclude that there is evidence to suggest that the new drug decreases blood pressure by less than 10 mmHg.
 
 
 
@@ -172,6 +217,24 @@ standard deviation of 0.5 pounds. A random sample of 25 products is taken, and t
 is found to be 4.8 pounds. Test the hypothesis that the true mean weight of the products is less than 5
 pounds with a significance level of 0.01.
 
+ANS. To test the hypothesis that the true mean weight of the products is less than 5 pounds with a significance level of 0.01, we can use a one-sample t-test. The null hypothesis is that the mean weight is equal to 5 pounds, while the alternative hypothesis is that the mean weight is less than 5 pounds.
+
+The formula for the t-statistic in a one-sample t-test is:
+
+t = (x̄ - μ) / (s / √n)
+
+Where:
+x̄ is the sample mean weight (4.8 pounds)
+μ is the hypothesized value of the population mean weight (5 pounds)
+s is the sample standard deviation (0.5 pounds)
+n is the sample size (25)
+
+Plugging in the values, we get:
+
+t = (4.8 - 5) / (0.5 / √25)
+t = -2
+
+The t-value for a one-tailed test with 24 degrees of freedom and a significance level of 0.01 is approximately -2.492 (from a t-table or calculator). Since our calculated t-value (-2) is greater than the critical value (-2.492), we fail to reject the null hypothesis and conclude that there is insufficient evidence to suggest that the true mean weight of the products is less than 5 pounds.
 
 
 Q16. Two groups of students are given different study materials to prepare for a test. The first group (n1 =
@@ -179,10 +242,45 @@ Q16. Two groups of students are given different study materials to prepare for a
 score of 75 with a standard deviation of 8. Test the hypothesis that the population means for the two
 groups are equal with a significance level of 0.01.
 
+ANS. To test the hypothesis that the population means for the two groups are equal with a significance level of 0.01, we can use a two-sample t-test. The null hypothesis is that the mean scores are equal for both groups, while the alternative hypothesis is that the means are not equal.
+
+The formula for the t-statistic in a two-sample t-test is:
+
+t = (x̄1 - x̄2) / (sqrt((s1^2/n1) + (s2^2/n2)))
+
+Where:
+x̄1 is the sample mean for the first group (80)
+x̄2 is the sample mean for the second group (75)
+s1 is the sample standard deviation for the first group (10)
+s2 is the sample standard deviation for the second group (8)
+n1 is the sample size for the first group (30)
+n2 is the sample size for the second group (40)
+
+Plugging in the values, we get:
+
+t = (80 - 75) / (sqrt((10^2/30) + (8^2/40)))
+t = 3.19
+
+The t-value for a two-tailed test with 68 degrees of freedom and a significance level of 0.01 is approximately ±2.618 (from a t-table or calculator). Since our calculated t-value (3.19) is greater than the positive critical value (2.618), we reject the null hypothesis and conclude that there is sufficient evidence to suggest that the population means for the two groups are not equal.
 
 
 Q17. A marketing company wants to estimate the average number of ads watched by viewers during a TV
 program. They take a random sample of 50 viewers and find that the sample mean is 4 with a standard
 deviation of 1.5. Estimate the population mean with a 99% confidence interval.
 
+ANS. To estimate the population mean number of ads watched by viewers with a 99% confidence interval, we can use the following formula:
 
+Confidence interval = x̄ ± (tα/2 * s/√n)
+
+Where:
+x̄ is the sample mean number of ads watched (4)
+s is the sample standard deviation (1.5)
+n is the sample size (50)
+tα/2 is the t-value for a 99% confidence interval with 49 degrees of freedom (from a t-table or calculator), which is approximately 2.681
+
+Plugging in the values, we get:
+
+Confidence interval = 4 ± (2.681 * 1.5/√50)
+Confidence interval = 4 ± 0.54
+
+Therefore, we can
